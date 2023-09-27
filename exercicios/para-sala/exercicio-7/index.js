@@ -1,4 +1,4 @@
-const { Account } = requere('./resolucao');
+const { Account } = require('./resolucao');
 
 luaraAccount = new Account(1, 123, 0001, 10000);
 luaraAccount.credit(2000);
