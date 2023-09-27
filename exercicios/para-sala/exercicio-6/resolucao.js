@@ -9,28 +9,28 @@ function Account(numeroDaConta, numeroDaAgencia, montanteInicial){
 }
 
 Account.prototype.credit = function credit(amount){
-    let creditLimit = montanteInicial += amount;
-    console.log(`Valor de crédito disponível: ${creditLimit}`)
+    this.amount += amount;
+    console.log(`Valor de crédito disponível: ${this.amount}`)
 }
 
 Account.prototype.debit = function debit(amount){
-    if(montanteInicial >= amount){
-        montanteInicial - amount;
-        console.log(`Novo saldo disponível: ${montanteInicial}`)
+    if(this.amount >= amount){
+        this.amount - amount;
+        console.log(`Novo saldo disponível: ${this.amount}`)
     } else {
         console.log(`Saldo insuficiente para finalizar a transação.`)
     }
     
 
-    let payment = montanteInicial - amount
+    let payment = this.amount - amount
     console.log(`Valor de débito disponível: ${payment}`)
 }
 
 Account.prototype.transferTo = function transferTo(anotherAccount, amount){
-    if(montanteInicial >= amount){
-        montanteInicial -= amount;
+    if(this.amount >= amount){
+        this.amount -= amount;
         anotherAccount.amount += amount
-        console.log(`Você transferiu ${amount} para ${anotherAccount}. Saldo disponível: ${montanteInicial}`)
+        console.log(`Você transferiu ${amount} para ${anotherAccount}. Saldo disponível: ${this.amount}`)
     } else {
         throw `Saldo insuficiente para finalizar a transação.`
         //console.log(`Saldo insuficiente para finalizar a transação.`)
