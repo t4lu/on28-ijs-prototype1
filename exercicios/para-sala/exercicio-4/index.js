@@ -6,4 +6,6 @@ employee1.addBenefits('VA');
 employee1.addBenefits('Zenklub');
 employee1.listBenefits();
 employee1.removeBenefits('VA');
+employee1.removeBenefits('Gympass');
+employee1.raiseSalary(0.1)
 employee1.listBenefits();
