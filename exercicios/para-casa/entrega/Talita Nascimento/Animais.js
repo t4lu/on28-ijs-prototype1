@@ -8,8 +8,8 @@ function consultar(dataDaConsulta) {
 function vacinar(nomeDaVacina) {
     let vacinasRecebidas = this.historicoMedico.nomesDasVacinas;
 
-    //verificar se o parametro de vacinas está vazio
-    if (nomeDaVacina == "") {
+    //verificar se o parametro de vacinas está vazio (undefined)
+    if (nomeDaVacina == undefined) {
         console.log("Não há histórico de vacinas.");
     } else {
         vacinasRecebidas.push(nomeDaVacina);
